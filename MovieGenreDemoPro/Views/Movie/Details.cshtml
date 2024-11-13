@@ -1,0 +1,60 @@
+﻿@model MovieGenreDemoPro.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.movieGenre.MovieGenreName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.movieGenre.MovieGenreName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearOfRelease)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearOfRelease)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ImagePath)*@
+            <label>Movie Image</label>
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.ImagePath)*@
+            <img src=@Model.ImagePath alt="@Model.MovieName" width="150" height="200"/>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MovieId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
